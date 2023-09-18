@@ -1,12 +1,12 @@
 name: Default branch workflow
-#on:
-#  push:
-#    branches:
-#      - main
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
 
-on: [pull_request, push]
 jobs:
   ehoes:
+    runs-on: ubuntu-latest
     steps:
       - name: Echo event
         run: echo ${{ github.event }}
