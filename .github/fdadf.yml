@@ -4,7 +4,9 @@ name: Default branch workflow
 #    branches:
 #      - main
 
-on: [pull_requesst, push]
+on:
+  pull_requesst
+  push
 jobs:
   ehoes:
     steps:
