@@ -14,3 +14,11 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
+      - name: event name
+        run: echo ${{ github.event_name }}
+      - name: if event name
+        if: ${{ github.event_name }} == "push"
+        run: echo "okej"
+      - name: if event name
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: echo "okej2"
