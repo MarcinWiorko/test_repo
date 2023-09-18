@@ -1,0 +1,16 @@
+name: Default branch workflow
+#on:
+#  push:
+#    branches:
+#      - main
+
+on: [pull_requesst, push]
+jobs:
+  ehoes:
+    steps:
+      - name: Echo event
+        run: echo ${{ github.event }}
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
