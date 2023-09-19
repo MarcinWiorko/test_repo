@@ -22,3 +22,6 @@ jobs:
       - name: if event name
         if: ${{ github.ref == 'refs/heads/main' }}
         run: echo "okej2"
+      - name: if event name
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        run: echo "okej3"
